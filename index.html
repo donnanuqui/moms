@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mommy Readiness Check | Donna Nuqui</title>
+<meta name="description" content="A free 1-minute check for every kind of mom. See how many months your family could be okay if the income suddenly paused, plus simple steps you can start this week.">
+<link rel="canonical" href="https://moms.donnanuqui.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moms.donnanuqui.com/">
+<meta property="og:title" content="How prepared is your family right now?">
+<meta property="og:description" content="Free 1-minute check for every kind of mom. 8 questions, no sign-up.">
+<meta property="og:image" content="https://moms.donnanuqui.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F7F2E7">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap">
+
+<!-- Google tag (GA4). Blocked inside the preview, works once hosted on tools.donnanuqui.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TXKES216M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-1TXKES216M');
+</script>
+
+<style>
+/* Layout: one centered card column that swaps screens (intro, profile, questions, form, result) */
+:root{
+  --bg:#F7F3EA; --paper:#FFFDF8; --ink:#2A2620; --muted:#6F675B; --line:#E4DCCB;
+  --gold:#A8843E; --gold-soft:#F1E6CC; --ok:#4E7A55; --warn:#B07A2A; --low:#A4523F;
+  --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --body:'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#1C1A16; --paper:#26231E; --ink:#F1EBDF; --muted:#B3A995; --line:#3A352D;
+  --gold:#D3B06A; --gold-soft:#3A3122; --ok:#8DBA92; --warn:#DDAA5E; --low:#D88B78; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#1C1A16; --paper:#26231E; --ink:#F1EBDF; --muted:#B3A995; --line:#3A352D;
+  --gold:#D3B06A; --gold-soft:#3A3122; --ok:#8DBA92; --warn:#DDAA5E; --low:#D88B78; color-scheme:dark; }
+
+*{ box-sizing:border-box; }
+[hidden]{ display:none !important; }
+body{ background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:28px 48px; }
+.wrap{ max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+.brand{ display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+.brand b{ color:var(--gold); font-weight:600; white-space:nowrap; }
+.brand span{ text-align:right; }
+.card{ background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:28px 24px; display:flex; flex-direction:column; gap:18px; }
+.eyebrow{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+h1,h2{ font-family:var(--display); font-weight:500; margin:0; text-wrap:balance; line-height:1.15; }
+h1{ font-size:clamp(30px, 7vw, 40px); }
+h1 em, h2 em{ color:var(--gold); font-style:italic; }
+h2{ font-size:clamp(24px, 5.5vw, 30px); }
+p{ margin:0; }
+.lead{ color:var(--muted); font-size:16px; }
+.moms{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.moms li{ padding:10px 14px; border-left:2px solid var(--gold); background:var(--gold-soft); border-radius:0 4px 4px 0; font-size:15px; }
+.promise{ border-left:2px solid var(--gold); padding-left:14px; font-family:var(--display); font-size:20px; font-style:italic; line-height:1.35; }
+.meta{ display:flex; gap:8px; flex-wrap:wrap; font-size:14px; color:var(--muted); }
+.meta span{ background:var(--gold-soft); border-radius:20px; padding:5px 12px; }
+
+.btn{ appearance:none; border:0; border-radius:6px; background:var(--ink); color:var(--paper); font:600 17px var(--body); padding:16px 20px; min-height:54px; -webkit-tap-highlight-color:transparent; cursor:pointer; text-align:center; text-decoration:none; display:block; width:100%; }
+.btn:hover{ opacity:.9; }
+.btn:disabled{ opacity:.35; cursor:not-allowed; }
+.btn.gold{ background:var(--gold); color:#fff; }
+.btn.ghost{ background:transparent; color:var(--ink); border:1px solid var(--line); }
+.explore{ display:flex; flex-direction:column; gap:10px; border-top:1px solid var(--line); padding-top:18px; }
+.ex{ display:flex; flex-direction:column; gap:3px; padding:16px; min-height:56px; -webkit-tap-highlight-color:transparent; border:1px solid var(--line); border-radius:4px; color:var(--ink); text-decoration:none; }
+.ex:hover{ border-color:var(--gold); }
+.ex strong{ font-size:17px; }
+.ex span{ font-size:15px; color:var(--muted); }
+.ex small{ font-size:14px; letter-spacing:.06em; color:var(--gold); margin-top:4px; }
+.soft{ border-top:1px solid var(--line); padding-top:18px; display:flex; flex-direction:column; gap:12px; text-align:center; color:var(--muted); }
+.link{ background:none; border:0; color:var(--muted); font:500 15px var(--body); cursor:pointer; text-decoration:underline; padding:12px 8px; min-height:48px; min-width:48px; }
+:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+
+.opts{ display:flex; flex-direction:column; gap:10px; }
+.opt{ appearance:none; text-align:left; background:var(--paper); color:var(--ink); border:1.5px solid var(--line); border-radius:6px; padding:16px; min-height:56px; font:500 17px var(--body); line-height:1.35; -webkit-tap-highlight-color:transparent; cursor:pointer; display:flex; gap:12px; align-items:center; }
+.opt:hover{ border-color:var(--gold); }
+.opt .dot{ width:22px; height:22px; border-radius:50%; border:1.5px solid var(--line); flex:none; }
+.opt[aria-pressed="true"]{ border-color:var(--gold); background:var(--gold-soft); }
+.opt[aria-pressed="true"] .dot{ border-color:var(--gold); background:var(--gold); box-shadow:inset 0 0 0 3px var(--gold-soft); }
+.opt small{ display:block; color:var(--muted); font-weight:400; font-size:14px; margin-top:2px; }
+
+.progress{ display:flex; flex-direction:column; gap:8px; }
+.progress .row{ display:flex; justify-content:space-between; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.track{ height:4px; background:var(--line); border-radius:2px; overflow:hidden; }
+.fill{ height:100%; background:var(--gold); width:0; transition:width .3s ease; }
+.hint{ font-size:15px; color:var(--muted); }
+.note{ background:var(--gold-soft); border-radius:6px; padding:14px 16px; font-size:16px; line-height:1.5; }
+.note b{ color:var(--gold); display:block; font-size:12px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:4px; }
+.nav{ display:flex; gap:10px; align-items:stretch; }
+.nav .link{ flex:0 0 auto; border:1.5px solid var(--line); border-radius:6px; text-decoration:none; padding:12px 18px; color:var(--ink); }
+.nav .btn{ flex:1; }
+
+label{ font-weight:600; font-size:14px; display:block; margin-bottom:6px; }
+.field{ display:flex; flex-direction:column; }
+input{ width:100%; font:18px var(--body); padding:15px 14px; min-height:54px; border:1px solid var(--line); border-radius:4px; background:var(--bg); color:var(--ink); }
+input:focus{ border-color:var(--gold); outline:none; }
+.peso{ position:relative; }
+.peso span{ position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted); }
+.peso input{ padding-left:30px; font-variant-numeric:tabular-nums; }
+.err{ color:var(--low); font-size:13px; min-height:18px; }
+.small{ font-size:15px; color:var(--muted); line-height:1.5; }
+
+/* results */
+.verdict{ display:flex; flex-direction:column; gap:6px; }
+.pill{ align-self:flex-start; font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; padding:5px 10px; border-radius:20px; }
+.pill.high{ background:color-mix(in srgb, var(--ok) 16%, transparent); color:var(--ok); }
+.pill.mid{ background:color-mix(in srgb, var(--warn) 16%, transparent); color:var(--warn); }
+.pill.low{ background:color-mix(in srgb, var(--low) 16%, transparent); color:var(--low); }
+.bars{ display:flex; flex-direction:column; gap:14px; }
+.bar .top{ display:flex; justify-content:space-between; gap:8px; font-size:16px; }
+.bar .top span:last-child{ font-variant-numeric:tabular-nums; color:var(--muted); }
+.bar .track{ height:8px; margin-top:6px; }
+.bar .fill.high{ background:var(--ok); } .bar .fill.mid{ background:var(--warn); } .bar .fill.low{ background:var(--low); }
+.gap{ border:1px solid var(--line); border-radius:4px; padding:18px; display:flex; flex-direction:column; gap:4px; }
+.gap .num{ font-family:var(--display); font-size:38px; line-height:1.1; font-variant-numeric:tabular-nums; }
+.steps{ display:flex; flex-direction:column; gap:12px; margin:0; padding:0; list-style:none; }
+.steps li{ border-top:1px solid var(--line); padding-top:12px; display:flex; flex-direction:column; gap:4px; }
+.steps .tag{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--gold); }
+.steps a{ color:var(--gold); font-weight:600; }
+.foot{ text-align:center; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+@media (max-width: 480px){
+  body{ padding-block:16px 32px; }
+  .card{ padding:22px 18px; gap:16px; }
+  .wrap{ gap:14px; }
+  .promise{ font-size:19px; }
+}
+@media (prefers-reduced-motion: reduce){ .fill{ transition:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><b>Donna Nuqui</b><span>Mommy Readiness Check</span></div>
+
+  <!-- INTRO -->
+  <section class="card" id="sIntro">
+    <div class="eyebrow">For every kind of mom</div>
+    <h1>Whatever your days look like, <em>you&rsquo;re doing so much for your family.</em></h1>
+    <p class="promise">Home all day, at the office, or working with a little one on your lap. No mom is less or more.</p>
+    <p>Ikaw ang nagpa-plan ng lahat para sa family. Pero na-plan mo na ba &lsquo;to: <strong>if our income paused tomorrow, ilang months kaya tayo magiging okay?</strong></p>
+    <div class="meta"><span>8 questions</span><span>1 minute</span><span>Free</span><span>No sign-up</span></div>
+    <button class="btn" id="startBtn" type="button">Start the check</button>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="card" id="sProfile" hidden>
+    <div class="eyebrow">First things first</div>
+    <h2>Which one <em>sounds most like you</em> right now?</h2>
+    <div class="opts" id="profileOpts"></div>
+  </section>
+
+  <!-- QUESTION -->
+  <section class="card" id="sQ" hidden>
+    <div class="progress">
+      <div class="row"><span id="qPillar"></span><span id="qCount"></span></div>
+      <div class="track"><div class="fill" id="qFill"></div></div>
+    </div>
+    <h2 id="qText"></h2>
+    <p class="hint" id="qHint" hidden></p>
+    <div class="opts" id="qOpts"></div>
+    <div class="note" id="qNote" hidden><b>Good to know</b><span id="qNoteText"></span></div>
+    <div class="nav">
+      <button class="link" id="backBtn" type="button">Back</button>
+      <button class="btn" id="nextBtn" type="button" disabled>Next</button>
+    </div>
+  </section>
+
+  <!-- EXPENSES -->
+  <section class="card" id="sExp" hidden>
+    <div class="eyebrow">Last one &middot; Optional</div>
+    <h2>About how much does your family <em>spend each month?</em></h2>
+    <p class="lead">A rough estimate is fine. Include food, bills, tuition, rent or amortization, and transpo. This shows you the actual amount you&rsquo;d need to get by.</p>
+    <div class="field peso"><span>&#8369;</span><input id="expInput" inputmode="numeric" autocomplete="off" placeholder="40,000"></div>
+    <div class="nav">
+      <button class="link" id="expBack" type="button">Back</button>
+      <button class="btn" id="expNext" type="button">Show my result</button>
+    </div>
+    <button class="link" id="expSkip" type="button">Skip and show my result</button>
+  </section>
+
+
+  <!-- RESULT -->
+  <section class="card" id="sResult" hidden>
+    <div class="verdict">
+      <span class="pill" id="rPill"></span>
+      <h2 id="rTitle"></h2>
+      <p class="lead" id="rLead"></p>
+    </div>
+    <p class="promise">Kahit ano pa ang score mo, you&rsquo;re already doing the hardest part: taking care of your family. This is just para sure tayo na covered din sila.</p>
+    <div class="bars" id="rBars"></div>
+    <div class="gap" id="rGap" hidden>
+      <span class="small">Para makaraos ng 6 months kahit walang income</span>
+      <span class="num" id="rGapNeed"></span>
+      <span class="small" id="rGapShort"></span>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:10px">What you can do</div>
+      <ul class="steps" id="rSteps"></ul>
+    </div>
+    <div class="explore">
+      <div class="eyebrow">Want to explore on your own?</div>
+      <a class="ex" data-plan="sfw" href="https://plans.donnanuqui.com/sfw/?src=mommy_check" target="_blank" rel="noopener">
+        <strong>Health coverage that stays with you</strong>
+        <span>Even if hubby changes jobs or stops working.</span>
+        <small>Sun Fit and Well &rarr;</small>
+      </a>
+      <a class="ex" data-plan="sap" href="https://plans.donnanuqui.com/sap/?src=mommy_check" target="_blank" rel="noopener">
+        <strong>Protection for the family, with money back</strong>
+        <span>If nothing happens, you get your money back.</span>
+        <small>Save and Protect &rarr;</small>
+      </a>
+    </div>
+    <button class="btn" id="copyBtn" type="button">Copy my result for hubby</button>
+    <p class="small" id="copyMsg" role="status" style="text-align:center"></p>
+    <textarea id="copyFallback" readonly hidden style="width:100%;min-height:140px;font:14px var(--body);padding:10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)"></textarea>
+    <div class="soft">
+      <p>If you&rsquo;d like someone to look at this with you, I&rsquo;m happy to help.</p>
+      <a class="btn ghost" id="ctaBtn" target="_blank" rel="noopener" href="https://m.me/financial.advisor.donna.n">Message Donna</a>
+    </div>
+    <button class="link" id="restartBtn" type="button">Retake the check</button>
+  </section>
+
+  <div class="foot">Donna Nuqui &middot; me.donnanuqui.com</div>
+</div>
+
+<script>
+var SHEETS_ID = 'AKfycbz77gI4kW6fKIXKLXWfdfZTht82123tMPaBPINr5KocEyGiZ5FJRlWzJKdaUJw1HhtXMg';
+var PESO = '₱';
+
+var PILLARS = {
+  access: 'Alam mo ba?',
+  control: 'Same page ba kayo?',
+  safety: 'Kung huminto ang income',
+  choice: 'Your support system'
+};
+
+var PROFILES = [
+  { id: 'sahm', label: 'Stay-at-home mom', sub: 'Hubby is the provider' },
+  { id: 'working', label: 'Working mom', sub: 'We both earn' },
+  { id: 'wfh', label: 'WFH or side-hustle mom', sub: 'Home-based, with my own income' }
+];
+
+// Each of t (question), n (note), h (hint) and o (options) can be a single value,
+// or an object keyed by profile: { all, sahm, working, wfh }. pick() resolves it.
+var QUESTIONS = [
+  { id: 'q2', p: 'access', t: 'Kung kailangan mo bukas, alam mo ba kung nasaan ang bank accounts, IDs, documents at passwords ninyo?',
+    o: {
+      all: [['Oo, alam ko lahat', 3], ['Yung iba lang', 1], ['Si hubby lang ang may alam', 0]],
+      working: [['Oo, alam ko lahat', 3], ['Yung iba lang', 1], ['Isa lang sa amin ang may alam', 0]]
+    } },
+
+  { id: 'q3', p: 'access',
+    t: {
+      all: 'Alam mo ba ang insurance at benefits ni hubby? Like HMO, life insurance, SSS, at sino ang beneficiary?',
+      working: 'Alam mo ba ang insurance at benefits ninyong dalawa? Like HMO, life insurance, SSS, at sino ang beneficiary?'
+    },
+    o: {
+      all: [['Oo, pati ang beneficiary', 3], ['Alam kong meron, pero hindi ang details', 1], ['Hindi ko alam', 0]],
+      working: [['Oo, sa aming dalawa', 3], ['Alam kong meron, pero hindi ang details', 1], ['Hindi masyado', 0]]
+    } },
+
+  { id: 'q4', p: 'control', t: 'Napag-uusapan ba ninyo ni hubby ang malalaking gastos at plans?',
+    o: [['Oo, lagi naming pinag-uusapan', 3], ['Minsan', 2], ['Hindi pa namin napag-uusapan', 0]] },
+
+  { id: 'q6', p: 'safety',
+    t: {
+      sahm: 'Kung huminto ang sahod ni hubby ngayon, ilang months kakayanin ng ipon ninyo?',
+      working: 'Kung huminto ang sahod ni hubby ngayon, ilang months kakayanin ng sahod mo at ipon ninyo ang lahat ng bills?',
+      wfh: 'Kung huminto ang sahod ni hubby ngayon, ilang months kakayanin ng kita mo at ipon ninyo ang lahat ng bills?'
+    },
+    o: [['Less than 1 month', 0], ['1 to 3 months', 1], ['3 to 6 months', 2], ['6 months or more', 3]] },
+
+  { id: 'q7', p: 'safety',
+    t: {
+      sahm: 'Saan galing ang HMO ni hubby?',
+      working: 'Saan galing ang HMO ninyong dalawa?',
+      wfh: 'May health coverage ba ang family na hindi naka-depende sa work ni hubby?'
+    },
+    n: {
+      sahm: 'Kadalasan, ang HMO galing sa work ay nawawala kapag nawala rin ang work. May yearly limit din ito, kaya minsan kulang sa malaking sakit.',
+      working: 'Kadalasan, ang HMO galing sa work ay nawawala kapag nawala ang work. May yearly limit din. Kung pareho kayong sa work lang umaasa, isang job change lang, may mawawalan na ng coverage.',
+      wfh: 'Karamihan sa WFH at freelance moms ay walang HMO sa work. Kaya madalas, isang trabaho lang ang sumasalo sa health ng buong family.'
+    },
+    o: {
+      sahm: [['Sa work lang niya', 0], ['Sa work, at may sarili pa siyang coverage', 3], ['Wala siyang HMO', 0], ['Hindi ako sure', 0]],
+      working: [['Sa work lang namin', 0], ['Sa work, at may sarili pa kaming coverage', 3], ['Yung isa sa amin, wala', 0], ['Hindi ako sure', 0]],
+      wfh: [['Sa work lang ni hubby', 0], ['Oo, may sarili kaming coverage', 3], ['Wala pa sa ngayon', 0], ['Hindi ako sure', 0]]
+    } },
+
+  { id: 'q8', p: 'safety',
+    t: {
+      all: 'Kung ma-ospital nang matagal si hubby, saan kukunin ang pambayad?',
+      working: 'Kung ma-ospital nang matagal ang isa sa inyo, saan kukunin ang pambayad?'
+    },
+    n: 'Kung ipon ang ipambabayad sa ospital, mababawasan din ang pang-gastos sa mga buwang walang sahod. Dalawang problema, isang ipon lang.',
+    o: [['May hiwalay kaming pondo o coverage para diyan', 3], ['Sa ipon namin', 1], ['Uutang o hihingi ng tulong', 0], ['Hindi pa namin napag-uusapan', 0]] },
+
+  { id: 'q9', p: 'safety',
+    t: {
+      all: 'Kung hindi makapag-work si hubby nang matagal, may papalit ba sa sahod niya?',
+      working: 'Kung hindi makapag-work ang isa sa inyo nang matagal, may papalit ba sa sahod niya?'
+    },
+    n: {
+      all: 'Nakakatulong ang SSS, pero kadalasan hindi nito kayang palitan ang buong sahod nang ilang months.',
+      wfh: 'Malaking tulong na ang kita mo. Ang tanong lang, kaya ba nitong buhayin ang buong family nang ilang months? Kadalasan, hindi rin kaya ng SSS mag-isa.'
+    },
+    o: [['Oo, may nakahanda kaming pamalit sa sahod', 3], ['SSS lang', 1], ['Wala', 0], ['Hindi ako sure', 0]] },
+
+  { id: 'q12', p: 'choice',
+    t: {
+      sahm: 'Kung kailangang alagaan si hubby, may tutulong ba sa\'yo sa mga bata?',
+      working: 'Kung kailangang alagaan si hubby, may tutulong ba sa mga bata habang nasa work ka?',
+      wfh: 'Kung kailangang alagaan si hubby, may tutulong ba sa mga bata habang nagwo-work ka sa bahay?'
+    },
+    n: {
+      sahm: 'Kapag nagkasakit ang provider, madalas si mommy ang nagiging caregiver at earner nang sabay.',
+      working: 'Kapag nagkasakit ang isa, madalas ang isa ang sabay na nagwo-work, nag-aalaga, at nagpapalaki sa mga bata.',
+      wfh: 'Kapag nagkasakit ang isa, madalas ang isa ang sabay na nagwo-work, nag-aalaga, at nagpapalaki sa mga bata.'
+    },
+    o: [['Oo, may support system kami', 3], ['Minsan lang', 1], ['Wala, ako lang', 0]] }
+];
+
+function pick(v){
+  if (v === undefined || v === null) { return v; }
+  if (typeof v === 'string' || Object.prototype.toString.call(v) === '[object Array]') { return v; }
+  if (v[state.profile] !== undefined) { return v[state.profile]; }
+  return v.all;
+}
+function optsOf(q){ return pick(q.o); }
+
+var STEPS = {
+  access: [
+    { tag: 'This week', t: 'Make a family folder', d: 'Bank accounts, IDs, policies, passwords and hubby\'s HR contact, all in one place. Do it once and you\'ll thank yourself later.' },
+    { tag: '5 minutes', t: 'Check who the beneficiaries are', d: 'Look at hubby\'s policies and SSS records. A quick look now saves a lot of confusion later.' }
+  ],
+  control: [
+    { tag: 'Tonight\'s talk', t: 'Have a 30-minute money talk', d: 'Share your result with hubby and talk through one question together: if one income stopped, what would we do first?' }
+  ],
+  safety: [
+    { tag: '5 minutes', t: 'Ask HR one question', d: 'For hubby\'s work, and yours if you have one: what happens to the HMO if someone leaves or gets sick for a long time?' },
+    { tag: 'This week', t: 'Look up what SSS would give', d: 'Check the sickness and disability benefits on the My.SSS portal, then compare them with hubby\'s monthly salary.' },
+    { tag: '5 minutes', t: 'Check your HMO\'s yearly limit', d: 'It\'s usually on the card or in the HR handbook. Compare it with what a few days in the hospital costs today.' },
+    { tag: 'Little by little', t: 'Start a 6-month family fund', d: 'Get to 1 month first, then 3, then 6. Keep it somewhere you both can reach.' }
+  ],
+  choice: [
+    { tag: 'This week', t: 'Talk to your support system', d: 'Ask family or close friends now who could help with the kids if something came up.' }
+  ]
+};
+
+var MONTHS_FROM_Q6 = [0.5, 2, 4.5, 6];
+
+var state = { profile: null, i: 0, answers: {}, expenses: 0, summary: '' };
+var utm = readUtm();
+
+function $(id){ return document.getElementById(id); }
+function track(name, params){ try { if (window.gtag) { var p = params || {}; p.tool = 'mommy-readiness'; p.utm_source = utm.utm_source || ''; p.utm_campaign = utm.utm_campaign || ''; gtag('event', name, p); } } catch (e) {} }
+function readUtm(){ var o = {}; try { var q = window.location.search.substring(1).split('&'); for (var i = 0; i < q.length; i++) { var kv = q[i].split('='); if (kv[0].indexOf('utm_') === 0) { o[kv[0]] = decodeURIComponent(kv[1] || ''); } } } catch (e) {} return o; }
+function fmt(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
+function show(id){
+  var ids = ['sIntro', 'sProfile', 'sQ', 'sExp', 'sResult'];
+  for (var i = 0; i < ids.length; i++) { $(ids[i]).hidden = ids[i] !== id; }
+  window.scrollTo(0, 0);
+}
+
+function makeOpt(label, sub, pressed, onClick){
+  var b = document.createElement('button');
+  b.type = 'button'; b.className = 'opt';
+  b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  var dot = document.createElement('span'); dot.className = 'dot';
+  var txt = document.createElement('span'); txt.textContent = label;
+  if (sub) { var s = document.createElement('small'); s.textContent = sub; txt.appendChild(s); }
+  b.appendChild(dot); b.appendChild(txt);
+  b.addEventListener('click', onClick);
+  return b;
+}
+
+function renderProfile(){
+  var box = $('profileOpts'); box.innerHTML = '';
+  for (var i = 0; i < PROFILES.length; i++) {
+    box.appendChild(makeOpt(PROFILES[i].label, PROFILES[i].sub, state.profile === PROFILES[i].id, profileClick(PROFILES[i].id)));
+  }
+}
+function profileClick(id){
+  return function(){
+    if (state.profile !== id) { state.answers = {}; }
+    state.profile = id; state.i = 0;
+    track('profile_select', { profile: id });
+    renderQ(); show('sQ');
+  };
+}
+
+function renderQ(){
+  var q = QUESTIONS[state.i];
+  var text = pick(q.t); var hint = pick(q.h); var note = pick(q.n); var opts = optsOf(q);
+  $('qPillar').textContent = PILLARS[q.p];
+  $('qCount').textContent = (state.i + 1) + ' / ' + QUESTIONS.length;
+  $('qFill').style.width = ((state.i) / QUESTIONS.length * 100) + '%';
+  $('qText').textContent = text;
+  $('qHint').hidden = !hint; $('qHint').textContent = hint || '';
+  var box = $('qOpts'); box.innerHTML = '';
+  for (var j = 0; j < opts.length; j++) {
+    box.appendChild(makeOpt(opts[j][0], null, state.answers[q.id] === j, optClick(j)));
+  }
+  var answered = state.answers[q.id] !== undefined;
+  $('nextBtn').disabled = !answered;
+  $('qNote').hidden = !(answered && note);
+  $('qNoteText').textContent = note || '';
+}
+function optClick(j){
+  return function(){
+    var q = QUESTIONS[state.i];
+    state.answers[q.id] = j;
+    var o = optsOf(q);
+    track('question_answer', { question: q.id, pillar: q.p, profile: state.profile, answer: o[j][0], points: o[j][1] });
+    renderQ();
+  };
+}
+
+function scores(){
+  var t = { access: [0, 0], control: [0, 0], safety: [0, 0], choice: [0, 0] };
+  for (var i = 0; i < QUESTIONS.length; i++) {
+    var q = QUESTIONS[i]; var a = state.answers[q.id];
+    t[q.p][1] += 3;
+    if (a !== undefined) { t[q.p][0] += optsOf(q)[a][1]; }
+  }
+  var out = {}; var sum = 0; var max = 0;
+  for (var k in t) { if (t.hasOwnProperty(k)) { out[k] = Math.round(t[k][0] / t[k][1] * 100); sum += t[k][0]; max += t[k][1]; } }
+  out.overall = Math.round(sum / max * 100);
+  return out;
+}
+function level(pct){ return pct >= 75 ? 'high' : (pct >= 45 ? 'mid' : 'low'); }
+
+function finish(){
+  var s = scores();
+  sendResult(s);
+  renderResult();
+  show('sResult');
+}
+
+function sendResult(s){
+  try {
+    var params = 'tool=' + encodeURIComponent('Mommy Readiness Check') +
+      '&profile=' + encodeURIComponent(state.profile) + '&score=' + s.overall +
+      '&access=' + s.access + '&control=' + s.control + '&safety=' + s.safety + '&choice=' + s.choice +
+      '&expenses=' + state.expenses + '&utm_source=' + encodeURIComponent(utm.utm_source || '') +
+      '&utm_campaign=' + encodeURIComponent(utm.utm_campaign || '') + '&t=' + Date.now();
+    var img = new Image();
+    img.src = 'https://script.google.com/macros/s/' + SHEETS_ID + '/exec?' + params;
+  } catch (e) {}
+}
+
+function renderResult(){
+  var s = scores(); var lv = level(s.overall);
+  var titles = {
+    high: ['Ready na', 'Galing! Ready ang family mo.', 'Strong na ang foundation ninyo. I-check lang ang lowest bar para sure na walang gaps.'],
+    mid: ['Halos ready', 'Malapit na kayo!', 'Good start na ito. Isa o dalawang area na lang ang kailangang palakasin.'],
+    low: ['Simula pa lang', 'Okay lang yan, mommy. Everyone starts somewhere.', 'Hindi ito tungkol sa pagkukulang mo. Now that you know where the gaps are, mas madali nang ayusin isa-isa.']
+  };
+  $('rPill').className = 'pill ' + lv; $('rPill').textContent = titles[lv][0];
+  $('rTitle').textContent = titles[lv][1];
+  $('rLead').textContent = titles[lv][2];
+
+  var bars = $('rBars'); bars.innerHTML = '';
+  var order = ['access', 'control', 'safety', 'choice'];
+  for (var i = 0; i < order.length; i++) {
+    var k = order[i]; var l = level(s[k]);
+    var d = document.createElement('div'); d.className = 'bar';
+    d.innerHTML = '<div class="top"><span></span><span></span></div><div class="track"><div class="fill ' + l + '"></div></div>';
+    d.querySelector('.top span').textContent = PILLARS[k];
+    d.querySelectorAll('.top span')[1].textContent = s[k] + '%';
+    d.querySelector('.fill').style.width = s[k] + '%';
+    bars.appendChild(d);
+  }
+
+  if (state.expenses > 0) {
+    var a6 = state.answers.q6; var have = MONTHS_FROM_Q6[a6 === undefined ? 0 : a6];
+    var need = state.expenses * 6; var shortBy = Math.max(0, 6 - have) * state.expenses;
+    $('rGapNeed').textContent = PESO + fmt(need);
+    $('rGapShort').textContent = shortBy > 0 ? ('Based on your answers, kulang pa ng mga ' + PESO + fmt(shortBy) + '.') : 'Based on your answers, covered na ang 6 months. Galing!';
+    $('rGap').hidden = false;
+  } else { $('rGap').hidden = true; }
+
+  var list = $('rSteps'); list.innerHTML = '';
+  var sorted = order.slice().sort(function(a, b){ return s[a] - s[b]; });
+  var weak = [];
+  for (var w = 0; w < sorted.length; w++) { if (s[sorted[w]] < 75) { weak.push(sorted[w]); } }
+  if (!weak.length) { weak = sorted; }
+  var picked = []; var round = 0;
+  while (picked.length < 3 && round < 4) {
+    for (var m = 0; m < weak.length && picked.length < 3; m++) {
+      var stp = STEPS[weak[m]][round];
+      if (stp) { picked.push(stp); }
+    }
+    round++;
+  }
+  for (var n = 0; n < picked.length; n++) {
+    var st = picked[n];
+    var li = document.createElement('li');
+    li.innerHTML = '<span class="tag"></span><strong></strong><span class="small"></span>';
+    li.querySelector('.tag').textContent = st.tag;
+    li.querySelector('strong').textContent = st.t;
+    li.querySelector('.small').textContent = st.d;
+    list.appendChild(li);
+  }
+  state.summary = 'My Mommy Readiness Check: ' + titles[lv][0] + ' (' + s.overall + '%)\n' +
+    PILLARS.access + ' ' + s.access + '%\n' + PILLARS.control + ' ' + s.control + '%\n' +
+    PILLARS.safety + ' ' + s.safety + '%\n' + PILLARS.choice + ' ' + s.choice + '%\n\nThings to do:\n';
+  for (var k2 = 0; k2 < picked.length; k2++) { state.summary += '- ' + picked[k2].t + '\n'; }
+  $('copyMsg').textContent = '';
+
+  var msg = 'Hi Donna! I just took the Mommy Readiness Check (' + titles[lv][0] + ', ' + s.overall + '%). Could you help me look at our backup plan?';
+  $('ctaBtn').href = 'https://m.me/financial.advisor.donna.n?text=' + encodeURIComponent(msg);
+  track('result_view', { level: lv, score: s.overall, access: s.access, control: s.control, safety: s.safety, choice: s.choice, profile: state.profile });
+}
+function linkTrack(tag){ return function(){ track('step_link_click', { step: tag }); }; }
+
+$('startBtn').addEventListener('click', function(){ track('quiz_start', {}); renderProfile(); show('sProfile'); });
+function goNext(){
+  if (state.i < QUESTIONS.length - 1) { state.i++; renderQ(); }
+  else { track('questions_complete', {}); show('sExp'); $('expInput').focus(); }
+}
+$('nextBtn').addEventListener('click', goNext);
+$('backBtn').addEventListener('click', function(){
+  if (state.i > 0) { state.i--; renderQ(); } else { renderProfile(); show('sProfile'); }
+});
+$('expInput').addEventListener('input', function(){
+  var raw = this.value.replace(/[^0-9]/g, '');
+  this.value = raw ? fmt(parseInt(raw, 10)) : '';
+});
+$('expBack').addEventListener('click', function(){ state.i = QUESTIONS.length - 1; renderQ(); show('sQ'); });
+$('expNext').addEventListener('click', function(){
+  var v = parseInt($('expInput').value.replace(/[^0-9]/g, ''), 10) || 0;
+  state.expenses = v;
+  track('expenses_step', { entered: v > 0 ? 'yes' : 'no' });
+  finish();
+});
+$('expSkip').addEventListener('click', function(){ state.expenses = 0; track('expenses_step', { entered: 'skipped' }); finish(); });
+var exLinks = document.querySelectorAll('.ex');
+for (var ex = 0; ex < exLinks.length; ex++) { exLinks[ex].addEventListener('click', exTrack(exLinks[ex].getAttribute('data-plan'))); }
+function exTrack(plan){ return function(){ track('explore_click', { plan: plan }); }; }
+$('copyBtn').addEventListener('click', function(){
+  var text = state.summary || '';
+  var done = function(){ $('copyMsg').textContent = 'Copied. You can paste it in your chat with hubby.'; track('copy_result', {}); };
+  var fallback = function(){ var t = $('copyFallback'); t.value = text; t.hidden = false; t.focus(); t.select(); $('copyMsg').textContent = 'Select the text below and copy it.'; };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+});
+$('ctaBtn').addEventListener('click', function(){ track('cta_click', { cta: 'messenger' }); });
+$('restartBtn').addEventListener('click', function(){
+  state = { profile: null, i: 0, answers: {}, expenses: 0 };
+  $('expInput').value = ''; $('copyFallback').hidden = true;
+  show('sIntro');
+});
+</script>
+</body>
+</html>
