@@ -49,7 +49,7 @@ body{ background:var(--bg); color:var(--ink); font-family:var(--body); font-size
   padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:28px 48px; }
 .wrap{ max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
 .brand{ display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
-.brand b{ color:var(--gold); font-weight:600; white-space:nowrap; }
+.brand .home{ color:var(--gold); font-weight:600; white-space:nowrap; text-decoration:none; padding:12px 0; }
 .brand span{ text-align:right; }
 .card{ background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:28px 24px; display:flex; flex-direction:column; gap:18px; }
 .eyebrow{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; }
@@ -126,6 +126,10 @@ input:focus{ border-color:var(--gold); outline:none; }
 .steps li{ border-top:1px solid var(--line); padding-top:12px; display:flex; flex-direction:column; gap:4px; }
 .steps .tag{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--gold); }
 .steps a{ color:var(--gold); font-weight:600; }
+.more{ border-top:1px solid var(--line); padding-top:18px; display:flex; flex-direction:column; gap:10px; align-items:center; }
+.more-links{ display:flex; flex-wrap:wrap; justify-content:center; gap:2px; }
+.more-links a{ color:var(--ink); text-decoration:none; font-size:15px; font-weight:500; padding:12px 10px; min-height:48px; display:inline-flex; align-items:center; border-radius:6px; }
+.more-links a:hover{ background:var(--gold-soft); }
 .foot{ text-align:center; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
 @media (max-width: 480px){
   body{ padding-block:16px 32px; }
@@ -138,7 +142,7 @@ input:focus{ border-color:var(--gold); outline:none; }
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><b>Donna Nuqui</b><span>Mommy Readiness Check</span></div>
+  <div class="brand"><a class="home" href="https://me.donnanuqui.com/?src=mommy_check" target="_blank" rel="noopener" data-nav="home">Donna Nuqui</a><span>Mommy Readiness Check</span></div>
 
   <!-- INTRO -->
   <section class="card" id="sIntro">
@@ -226,6 +230,14 @@ input:focus{ border-color:var(--gold); outline:none; }
       <a class="btn ghost" id="ctaBtn" target="_blank" rel="noopener" href="https://m.me/financial.advisor.donna.n">Message Donna</a>
     </div>
     <button class="link" id="restartBtn" type="button">Retake the check</button>
+    <nav class="more" aria-label="More from Donna">
+      <div class="eyebrow">More from Donna</div>
+      <div class="more-links">
+        <a href="https://me.donnanuqui.com/?src=mommy_check" target="_blank" rel="noopener" data-nav="about">About me</a>
+        <a href="https://tools.donnanuqui.com/?src=mommy_check" target="_blank" rel="noopener" data-nav="tools">Free tools</a>
+        <a href="https://plans.donnanuqui.com/?src=mommy_check" target="_blank" rel="noopener" data-nav="plans">Plan Finder</a>
+      </div>
+    </nav>
   </section>
 
   <div class="foot">Donna Nuqui &middot; me.donnanuqui.com</div>
@@ -463,7 +475,7 @@ function renderResult(){
   var titles = {
     high: ['Ready na', 'Galing! Ready ang family mo.', 'Strong na ang foundation ninyo. I-check lang ang lowest bar para sure na walang gaps.'],
     mid: ['Halos ready', 'Malapit na kayo!', 'Good start na ito. Isa o dalawang area na lang ang kailangang palakasin.'],
-    low: ['Simula pa lang', 'Okay lang yan, mommy. Everyone starts somewhere.', 'Hindi ito tungkol sa pagkukulang mo. Now that you know where the gaps are, mas madali nang ayusin isa-isa.']
+    low: ['Simula pa lang', 'Okay lang yan, mommy. Everyone starts somewhere.', 'This is just your starting point. Now that you know where the gaps are, mas madali nang ayusin isa-isa.']
   };
   $('rPill').className = 'pill ' + lv; $('rPill').textContent = titles[lv][0];
   $('rTitle').textContent = titles[lv][1];
@@ -544,6 +556,9 @@ $('expNext').addEventListener('click', function(){
   finish();
 });
 $('expSkip').addEventListener('click', function(){ state.expenses = 0; track('expenses_step', { entered: 'skipped' }); finish(); });
+var navLinks = document.querySelectorAll('[data-nav]');
+for (var nv = 0; nv < navLinks.length; nv++) { navLinks[nv].addEventListener('click', navTrack(navLinks[nv].getAttribute('data-nav'))); }
+function navTrack(where){ return function(){ track('nav_click', { link: where }); }; }
 var exLinks = document.querySelectorAll('.ex');
 for (var ex = 0; ex < exLinks.length; ex++) { exLinks[ex].addEventListener('click', exTrack(exLinks[ex].getAttribute('data-plan'))); }
 function exTrack(plan){ return function(){ track('explore_click', { plan: plan }); }; }
